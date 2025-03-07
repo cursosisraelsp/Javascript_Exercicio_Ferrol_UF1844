@@ -2,5 +2,8 @@ https://es.javascript.info/dom-attributes-and-properties
 elem.getAttribute(nombre) – obtiene el valor.
 elem.setAttribute(nombre, valor) – establece el valor.
 
-Usuario pepito@rodriguez
-Pwd     123456
+Usuario 
+    pepito@rodriguez
+    
+Pwd     
+    123456
