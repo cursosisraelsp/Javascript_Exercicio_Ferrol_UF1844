@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
+    rel="stylesheet">
+  <title>crear user</title>
+  <link href="../css/formulario.css" rel="stylesheet" type="text/css" />
+  <script async type="module" ></script>
+</head>
+<body>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/logueo">logueo</a>
+  </nav>
+  <form id="formulario">
+    <ul>
+      <li>
+        <label for="name">Nombre de usuario:</label>
+        <input type="text" id="name" name="user_name" placeholder="Ingresa o nome de usuario"/>
+      </li>
+      <li>
+        <label for="apelido1">Primeiro apelido de usuario:</label>
+        <input type="text" id="apelido1" name="user_apelido1" placeholder="Ingresa o primeiro apelido do usuario"/>
+      </li>
+      <li>
+        <label for="apelido2">Segundo apelido de usuario:</label>
+        <input type="text" id="apelido2" name="user_apelido2" placeholder="Ingresa o segundo apelido do usuario"/>
+      </li>
+      <li>
+        <label for="pwd">Ingresa o teu password</label>
+        <input type="password" id="pwd" name="user_pwd" placeholder="Ingresa o teu password"/>
+      </li>
+      <li>
+        <label for="mail">Correo electrónico:</label>
+        <input type="email" id="mail" name="user_email" placeholder="Ingresa o enderezo do usuario"/>
+      </li>
+    </ul>
+   <!--  <button id="creousuario" type="button">Enviar</button> -->
+    <input type="submit" value="Enviar" />
+    <button type="reset">Borrar</button>
+  </form>
+  <script>
+    formulario.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      let formData = new FormData(formulario);
+
+      /* for (let [usuario, mail] of formData) {
+        console.log(`${name} = ${mail}`);
+      } */
+      const formJson = Object.fromEntries(formData.entries());
+      console.log(formJson);
+      let obxetoEnvio = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formJson),
+      };
+
+      let respostaCrearUser = await fetch("/crearuser", obxetoEnvio);
+
+      let contestacionRecibida = await respostaCrearUser.json();
+      console.log("resposta ", contestacionRecibida);
+      if (contestacionRecibida.estado == "ok" && contestacionRecibida.mensaje == "usuario creado") {
+        console.log("USUARIO CREADO CORRECTAMENTE")
+      } else {
+        console.log(contestacionRecibida);
+      }
+    });
+  </script>
+</body>
+</html>

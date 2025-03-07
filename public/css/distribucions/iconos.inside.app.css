@@ -1,0 +1,38 @@
+.icono{
+  width: 20px;
+}
+
+img[id="sair"]{
+  border:1px solid white;
+  border-radius: 3px;
+  cursor: pointer;
+}
+img[name="amburguesa"]{
+  background: linear-gradient(#4C8DEB, #4C74EC);
+  width:20px;
+  border:1px solid transparent;
+  border-radius:5px;
+  padding:5px;
+}
+
+img[name="icono-eliminar"],img[name="icono-editar"],img[name="icono-gardar"]{
+  cursor:pointer
+}
+img[name="icono-eliminar"]:hover{
+  border: 1px solid transparent;
+  border-radius: 3px;
+  padding:3px;
+  background-color: #f03333;
+}
+  img[name="icono-editar"]:hover{
+    border: 1px solid transparent;
+    border-radius: 3px;
+    padding:3px;
+    background-color: #5cf033;
+  }
+img[name="icono-gardar"]:hover{
+  border: 1px solid transparent;
+  border-radius: 3px;
+  padding:3px;
+  background-color: #339ef0;
+}

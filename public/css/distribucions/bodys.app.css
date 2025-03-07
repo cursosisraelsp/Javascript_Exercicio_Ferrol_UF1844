@@ -1,0 +1,35 @@
+body[name="inside-app"] {
+  display: grid;
+  width: var(--anchura-total);
+  min-height: var(--min-heigth-main);
+  grid-template-areas:
+    "aside cabecera"
+    "aside main"
+    "aside footer";
+  grid-template-rows: var(--height-header) 1fr 30px;
+  grid-template-columns: var(--min-width-aside) 1fr;
+  background-color: #F9FAFF;
+  grid-gap: 30px 10px;
+}
+
+body[name="inside-app"]>aside {
+  grid-area: aside;
+  background-color: var(--cor-aside);
+}
+
+body[name="inside-app"]>header {
+  grid-area: cabecera;
+  /* padding: 15px; */
+  background-color: #FFFFFF;
+  margin-right: 15px;
+}
+
+body[name="inside-app"]>main {
+  grid-area: main;
+  margin-right: 15px;
+}
+
+body[name="inside-app"]>footer {
+  grid-area: footer;
+  
+}

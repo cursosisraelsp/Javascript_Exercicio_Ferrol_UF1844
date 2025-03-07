@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <title>crear user</title>
+    <link href="../css/formulario.css" rel="stylesheet" type="text/css" />
+    <script async type="module"></script>
+  </head>
+  <body>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/crearuser">Crear usuario</a>
+    </nav>
+    <form id="formulario">
+      <ul>
+        <li>
+          <!-- UTILIZAMOS O ATRIBUTO 'FOR' PARA CLICAAAAR SOBRE LABEL E FOCALIZAR O INPUT CO ID IGUAL
+          NES
+          -->
+          <label for="pwd">Ingresa o teu password</label>
+          <!-- IMPORTANTE O ATRIBUTO NAME
+          XA QUE, VAI SER O QUE SE MOSTRE NO 'BACK' NO CORPO DO BODY
+          
+          -->
+          <input
+            type="password"
+            id="pwd"
+            name="user_pwd"
+            placeholder="Ingresa o teu password"
+          />
+        </li>
+        <li>
+          <label for="mail">Correo electrónico:</label>
+
+          <!-- O TYPE='EMAIL' FAI QUE OBRIGUE A INTRODUCIR @ -->
+          
+          <input
+            type="email"
+            id="mail"
+            name="user_email"
+            placeholder="Ingresa o enderezo do usuario"
+          />
+        </li>
+      </ul>
+      <!--  <button id="logueo" type="button">Enviar</button> -->
+      <input type="submit" value="Enviar" />
+      <!-- type='reset' fai que se borren os datos dos input -->
+      <button type="reset">Borrar</button>
+    </form>
+    <script>
+      /*
+      Aquí utilizo o atributo 'id' que está na etiqueta form
+      */
+      formulario.addEventListener("submit", async (e) => {
+        e.preventDefault(); // 1. OBLIGATORIO
+        // DEVOLVE UN OBXETO ESPECIAL
+        let formData = new FormData(formulario);// 2. OBLIGATORIO
+        console.log('o formData ',formData)
+        // O BUCLE FOR É SE QUEREMOS COLLER OS DATOS POR SEPARADO
+        /* for (let [usuario, mail] of formData) {
+          console.log(`${name} = ${mail}`);
+        } */
+        // REALMENTE TRABALLAREMOS DA MANEIRA 
+        let valores = formData.entries(); // 3. OBLIGATORIO
+        const formJson = Object.fromEntries(valores);// 4. OBLIGATORIO
+        console.log(formJson);
+        let obxetoEnvio = {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formJson),
+        };
+        /*let obxetoEnvio = {
+          method: "POST",
+          body: JSON.stringify(formJson),
+        };*/
+
+        let respostaLogueo = await fetch("/logueo", obxetoEnvio);
+
+        let contestacionRecibida = await respostaLogueo.json();
+        console.log("resposta ", contestacionRecibida);
+        // COMPROBAMOS A RESPOSTA DO SERVIDOR
+        if (contestacionRecibida.estado == "ok") {
+          // 'location.replace' 
+          // introduce ou reemplaza o texto a partir da raíz do server '/'
+          location.replace("/factura");// 'sustitue a URL a partir server '/' creando un endpoint GET' 
+          // O NAVEGADOR SO ALMACENA TEXTO, por iso teño que convertilo mediante
+          // 'JSON.stringify()'
+          // localStorage
+          localStorage.setItem("usuario", JSON.stringify(contestacionRecibida));
+          let menxaxeRecibida = JSON.parse(localStorage.getItem("usuario"))
+          console.log(menxaxeRecibida)
+        } else {
+          console.log(contestacionRecibida);
+        }
+      });
+    </script>
+  </body>
+</html>

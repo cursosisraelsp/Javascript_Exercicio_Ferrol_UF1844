@@ -1,0 +1,30 @@
+/* <uniquifier>: Use a unique and descriptive class name
+ <weight>: Use a value from 200 to 1000*/
+
+.mulish-normal {
+  font-family: "Mulish", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+}
+.mulish-normal-10 {
+  font-family: "Mulish", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 8px;
+}
+
+.estilo-new-invoice{
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.estilo-title-detail-company{
+  font-weight: 800;
+}
+
+.estilo-seleccion-tipo-cliente{
+  font-size: 12px;
+  font-family: "Mulish", sans-serif;
+}

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
+    rel="stylesheet">
+  <title>replit</title>
+  <link href="../css/main.css" rel="stylesheet" type="text/css" />
+  <script async type="module" src="../javascript/index.js"></script>
+</head>
+
+<body name="inside-app" class="mulish-normal">
+  <aside>
+    <nav class="nav-inside">
+      <img alt="imaxen Oval" class="imagen" src="./imaxes/svg/Oval.svg" />
+      <img title="home" class="icono" src="./imaxes/svg/home_white.svg" />
+      <img title="users" class="icono" src="./imaxes/svg/users.svg" />
+      <img id="sair" title="logout" class="icono" src="./imaxes/svg/logout.svg" />
+    </nav>
+  </aside>
+  <header>
+    <nav class="header-menu">
+      <div class="buscar">
+        <img class="imagen" src="./imaxes/svg/search.svg" alt="imaxen search" />
+        <input type="search" placeholder="Search" title="introduce texto" />
+      </div>
+      <div class="navegacion">
+        <a href="/invoce">Facturas</a>
+      </div>
+      <div class="div-lateral-dcha">
+        <div class="posicion-relativa">
+          <span class="aviso-num-mensaxes posicion-aviso mulish-normal-10 ">12</span>
+          <img class="imagen" src="./imaxes/svg/campanilla.svg" alt="imaxen campanilla" />
+        </div>
+        <img alt="imaxen user" class="imaxe-persoa" src="./imaxes/persoas/persoa0_fake.jpg" />
+      </div>
+    </nav>
+    
+  </header>
+  <main class="">
+    <header class="header-menu">
+      <div class="estilo-new-invoice">New Invoce</div>
+      <div class="posicionamento-flex gap-15">
+        <div class="posicionamento-eleccion-make gap-5">
+          <input type="checkbox">
+          <label>Make recurring</label>
+        </div>
+        <button name="cancel">Cancel</button>
+        <button name="done">Done</button>
+      </div>
+    </header>
+    <section name="informacion-factura">
+      <section name="informacion-cliente">
+        <header class="estilo-seleccion-tipo-cliente">
+          <label for="cliente">Customer</label>
+          <select id="cliente" class="estilo-seleccion-tipo-cliente">
+            <option value="">--Please choose an option--</option>
+            <option value="normal">Normal</option>
+            <option value="especial">Especial</option>
+            <option value="vip">Vip</option>
+            <option value="empresa">Empresa</option>
+            <option value="autonomo">Autónomo</option>
+          </select>
+        </header>
+        <section class="posicionamento-flex posicionamento-info-factura">
+          <div class="posicionamento-flex posicionamento-info-factura">
+            <div class="posicionamento-flex gap-30">
+              <article name="informacion-companhia">
+                <span class="estilo-title-detail-company">Company Details</span>
+                <span>Reactial</span>
+                <span>Vat. No. 8879090</span>
+                <span>11 Stonepot Road</span>
+                <span>Clinton (Hunterdon), NJ 08809</span>
+              </article>
+              <article name="informacion-companhia">
+                <span class="estilo-title-detail-company">Shipping Address</span>
+                <span>Reactial</span>
+                <span>Vat. No. 8879090</span>
+                <span>11 Stonepot Road</span>
+                <span>Clinton (Hunterdon), NJ 08809</span>
+              </article>
+            </div>
+          </div>
+          <article>
+            <div name="detalle-factura">
+              <label>Invoce</label>
+              <input name="factura" type="text" placeholder="Introduce numero de factura" />
+            </div>
+
+
+            <div name="detalle-factura">
+              <label for="servicio">Servicio</label>
+              <input id="servicio" name="factura" type="text" required />
+            </div>
+            <div name="detalle-factura">
+              <label for="cantidade">Cantidade</label>
+              <input id="cantidade" name="factura" type="number" required />
+            </div>
+            <div name="detalle-factura">
+              <label for="precio">Precio</label>
+              <input id="precio" name="factura" type="number" required />
+            </div>
+            <div name="detalle-factura">
+              <label for="data-factura">Data de factura</label>
+              <input id="data-factura" name="factura" type="date" required pattern="\d{4}-\d{2}-\d{2}" />
+            </div>
+          </article>
+        </section>
+      </section>
+      <section name="informacion-tabla">
+        <button id="enviar" name="boton-enviar">Enviar</button>
+        <table>
+        <caption>Factura</caption>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Sevicio/Producto</th>
+              <th>Cantidade</th>
+              <th>Precio</th>
+              <th>Data</th>
+              <th>Precio total</th>
+            </tr>
+          </thead>
+          <tbody>
+
+          </tbody>
+        </table>
+
+      </section>
+    </section>
+  </main>
+  
+  <footer>isto é o footer</footer>
+  <script>
+
+    /*function filas(fila){
+      let novoDato = {}
+      let num = 0;
+      for(let datos of fila){
+        let dato = datos.textContent;
+        if(num == 2 || num == 3 || num == 5){
+          dato = parseFloat(datos.textContent)
+        }
+        novoDato[`${num}`] = dato;
+        num++;
+        console.log("dato: ",dato,"novoDato ",novoDato)
+      }
+      return novoDato;
+    }*/
+    
+    /*enviar.addEventListener("click",async ()=>{
+      let corpoDaTaboa = document.querySelector("tbody");
+      let filasTaboa = corpoDaTaboa.children;
+      const fil = [];
+      const fil2 = {};
+  
+      let numfila = 0;
+      let elemento = 0;
+      for(let filaTaboa of filasTaboa){
+        
+        console.log("filaTaboa: ",filaTaboa)
+        fil2[`f${elemento}`] = filas(filaTaboa.children)
+        elemento++;
+      }
+
+      fil.push(fil2)
+      console.log(" fil ",fil);
+      let datos = {filasTabla: fil2}
+      datoEnviadoJSON = {
+        method:'POST',
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(datos)
+      };
+
+      let respostaRecibida = await fetch("/datosfacturas",datoEnviadoJSON);
+      let respostaRecibidaJson = await respostaRecibida.json();
+      console.log("resposta recibida ", respostaRecibidaJson)
+    })*/
+  </script>
+
+</body>
+
+</html>

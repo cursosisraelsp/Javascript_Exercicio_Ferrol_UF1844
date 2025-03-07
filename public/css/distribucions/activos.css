@@ -1,0 +1,17 @@
+article:target a {
+  background: linear-gradient(#4C8DEB, #4C74EC);
+  color:#FFFFFF;
+}
+article:focus {
+  background: linear-gradient(#4C8DEB, #4C74EC);
+}
+a{
+  text-decoration-line:none;
+  width:160px;
+  height:65px;
+  border-radius:3px;
+}
+
+a:active{
+  color:#FFFFFF;
+}

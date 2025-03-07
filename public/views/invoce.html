@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <title>replit</title>
+    <link href="../css/main.css" rel="stylesheet" type="text/css" />
+    <script async type="module" src="../javascript/index.js"></script>
+  </head>
+
+  <body name="inside-app" class="mulish-normal">
+    <aside>
+      <nav class="nav-inside">
+        <img alt="imaxen Oval" class="imagen" src="./imaxes/svg/Oval.svg" />
+        <img title="home" class="icono" src="./imaxes/svg/home_white.svg" />
+        <img title="users" class="icono" src="./imaxes/svg/users.svg" />
+        <img
+          id="sair"
+          title="logout"
+          class="icono"
+          src="./imaxes/svg/logout.svg"
+        />
+      </nav>
+    </aside>
+    <header>
+      <nav class="header-menu">
+        <div class="buscar">
+          <img
+            class="imagen"
+            src="./imaxes/svg/search.svg"
+            alt="imaxen search"
+          />
+          <input type="search" placeholder="Search" title="introduce texto" />
+        </div>
+        <div class="navegacion">
+          <a href="/factura">Factura</a>
+        </div>
+        <div class="div-lateral-dcha">
+          <div class="posicion-relativa">
+            <span class="aviso-num-mensaxes posicion-aviso mulish-normal-10"
+              >12</span
+            >
+            <img
+              class="imagen"
+              src="./imaxes/svg/campanilla.svg"
+              alt="imaxen campanilla"
+            />
+          </div>
+          <img
+            alt="imaxen user"
+            class="imaxe-persoa"
+            src="./imaxes/persoas/persoa0_fake.jpg"
+          />
+        </div>
+      </nav>
+    </header>
+    <main class="">
+      <header class="header-menu">
+        <div class="estilo-new-invoice">Invoces</div>
+        <div class="posicionamento-flex gap-15">
+          <button name="done">Add New</button>
+        </div>
+      </header>
+      <section
+        name="informacion-invoce"
+        class="posicionamento-flex posicionamento-informacion-invoce"
+      >
+        <span>NOVO BLOQUE</span>
+        <div>
+          <img
+            name="amburguesa"
+            src="./imaxes/svg/amburguesa.svg"
+            alt="imaxen amburguesa"
+          />
+        </div>
+      </section>
+      <section name="informacion-factura">
+        <section name="informacion-cliente">
+          <header class="estilo-seleccion-tipo-cliente">
+            <label for="cliente">Customer</label>
+            <select id="cliente" class="estilo-seleccion-tipo-cliente">
+              <option value="">--Please choose an option--</option>
+              <option value="normal">Normal</option>
+              <option value="especial">Especial</option>
+              <option value="vip">Vip</option>
+              <option value="empresa">Empresa</option>
+              <option value="autonomo">Autónomo</option>
+            </select>
+          </header>
+          <section class="posicionamento-flex posicionamento-info-factura">
+            <div class="posicionamento-flex posicionamento-info-factura">
+              <div class="posicionamento-flex gap-30">
+                <article
+                  id="enlace"
+                  name="informacion-total-cantidade-facturas"
+                  class="posicionamento-cadros-info-facturas"
+                >
+                  <a href="#enlace" class="posicionamento-cadros-info-facturas">
+                    <span class="estilo-title-detail-company"
+                      >Suma de todas</span
+                    >
+                    <span>232,323€</span>
+                  </a>
+                </article>
+                <article
+                  id="enlace2"
+                  name="informacion-total-cantidade-facturas"
+                  class="posicionamento-cadros-info-facturas"
+                >
+                  <a
+                    href="#enlace2"
+                    class="posicionamento-cadros-info-facturas"
+                  >
+                    <span class="estilo-title-detail-company">Impagadas</span>
+                    <span>232,323€</span>
+                  </a>
+                </article>
+                <article
+                  id="enlace3"
+                  name="informacion-total-cantidade-facturas"
+                  class="posicionamento-cadros-info-facturas"
+                >
+                  <a
+                    href="#enlace3"
+                    class="posicionamento-cadros-info-facturas"
+                  >
+                    <span class="estilo-title-detail-company">Pagadas</span>
+                    <span>232,323€</span>
+                  </a>
+                </article>
+                <article
+                  id="enlace4"
+                  name="informacion-total-cantidade-facturas"
+                  class="posicionamento-cadros-info-facturas"
+                >
+                  <a
+                    href="#enlace4"
+                    class="posicionamento-cadros-info-facturas"
+                  >
+                    <span class="estilo-title-detail-company">Canceladas</span>
+                    <span>232,323€</span>
+                  </a>
+                </article>
+              </div>
+            </div>
+            <article></article>
+          </section>
+        </section>
+        <section name="informacion-tabla">
+          <table>
+            <caption>
+              Tabla de facturas
+            </caption>
+            <thead>
+              <tr>
+                <th>Data</th>
+                <th>Número factura</th>
+                <th>Producto</th>
+                <th>Cantidade</th>
+                <th>Precio</th>
+                <th>Total</th>
+                <th>Estado</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </section>
+      </section>
+    </main>
+    
+    <footer>isto é o footer</footer>
+
+    
+  </body>
+</html>

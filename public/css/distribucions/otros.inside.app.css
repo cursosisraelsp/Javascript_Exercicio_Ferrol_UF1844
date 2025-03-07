@@ -1,0 +1,19 @@
+.aviso-num-mensaxes{
+  background-color: #36D09E;
+  padding: 1px;
+  width: 12px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: #FFFFFF;
+}
+#cliente{
+  border: 1px solid #DDE9FB;
+  border-radius: 5px;
+  padding: 10px;
+  color: #4C8DEB;
+}
+input[name="factura"]{
+  border: 1px solid #DDE9FB;
+  border-radius: 5px;
+  padding: 10px;
+}

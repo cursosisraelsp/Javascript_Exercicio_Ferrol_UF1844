@@ -1,0 +1,61 @@
+@import url("./distribucions/etiquetas.inside.app.css");
+@import url("./distribucions/posicionamentos.inside.app.css");
+@import url("./distribucions/iconos.inside.app.css");
+*{
+  padding: 0;
+  margin: 0;
+}
+:root{
+  --min-width-aside: 60px;
+  --cor-aside: #4C8DEB;
+  --height-header:70px;
+  --min-heigth-main: 809px;
+  --cor-test:#caafaf;
+  --anchura-total:100%;
+  --height-main:calc(var(--min-heigth-main) - var(--height-header) )
+}
+body{
+  display: flex;
+}
+html {
+  height: 100%;
+  width: 100%;
+}
+
+.header-menu{
+  width: var(--anchura-total);
+  height: var(--height-header);
+  display: flex;
+  justify-content: end;
+  align-items: stretch;
+}
+.div-lateral-izq{
+  background-color: var(--cor-aside);
+  min-width: var(--min-width-aside);
+  min-height: 70px;
+}
+
+.imagen{
+
+  background-color: #979797;
+  border: 1px solid #979797;
+  border-radius: 50%;
+  fill: #979797;
+}
+.div-lateral-dcha{
+  min-width: 150px;
+  background-color: orange;
+}
+.nav-inside{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.corpo-header-main{
+  width: 100%;
+
+}
+
+.altura-main{
+  min-height: var(--height-main);
+}

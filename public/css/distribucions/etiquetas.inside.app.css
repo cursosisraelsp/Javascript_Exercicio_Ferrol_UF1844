@@ -1,0 +1,61 @@
+/* aside{
+  min-width: var(--min-width-aside);
+  min-height: var(--min-heigth-main);
+  background-color: var(--cor-aside);
+  display: inline-block;
+}
+section{
+  background-color: var(--cor-test);
+  width: var(--anchura-total);
+} 
+ */
+
+
+button{
+  border: 1px solid transparent;
+  padding: 5px;
+  border-radius: 5px;
+}
+button[name="cancel"] {
+ 
+  width: 85px;
+  height: 40px;
+  font-family: 'Mulish';
+  color: #405169;
+  font-size: 14px;
+}
+
+button[name="done"],[name="boton-enviar"]{
+  
+  color: #FFFFFF;
+  width: 85px;
+  height: 40px;
+  font-family: 'Mulish';
+  background-color: #4C74EC;
+}
+
+input {
+  border: none;
+  line-height: 30px;
+}
+
+input:focus {
+  background-color: #b4acac;
+}
+table{
+  width: 100%;
+  border: 1px solid #DDE9FB;
+  border-radius: 5px;
+ /*  border-collapse: collapse; */
+  border-spacing: 0;
+  padding: 10px;
+}
+
+td {
+  border: 1px solid #DDE9FB;
+  padding: 4px 6px;
+  text-align:center;
+}
+button{
+  cursor: pointer;
+}
